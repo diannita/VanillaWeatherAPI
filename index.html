@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Diana Rodriguez cosme - Happy Cat 😸" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+
+    <!-- internal resourses -->
+    <link rel="stylesheet" href="./src/css/styles.css" />
+
+    <!-- weather icons -->
+    <link rel="stylesheet" href="./src/css/weather-icons-wind.css" />
+    <link
+      rel="stylesheet"
+      href="../src/css/weather-icons-wind.min.css"
+    />
+    <link rel="stylesheet" href="./src/css/weather-icons.css" />
+    <link rel="stylesheet" href="./src/css/weather-icons.min.css" />
+
+    <!-- weather fonts -->
+    <link
+      rel="stylesheet"
+      href="./src/font/weathericons-regular-webfont.eot"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/font/weathericons-regular-webfont.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/font/weathericons-regular-webfont.ttf"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/font/weathericons-regular-webfont.woff"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/font//weathericons-regular-webfont.woff2"
+    />
+
+    <!-- bootstrap cdn -->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"/>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+
+    <!-- search btn -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+
+    <!-- awesome fonts -->
+    <script src="https://kit.fontawesome.com/a56759c31a.js" crossorigin="anonymous"></script>
+
+    <!-- axios library -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>City Weather Application</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="div-bg-city">
+        <section>
+          <span>
+            <h1 class="lb-city" id="city-heading">
+              <button class="btnLocation" id="btnLocation">
+                <i class="fa-solid fa-location-dot"></i>
+              </button>
+              <span id="city"></span>
+              </i>
+            </h1>
+            <h2 id="currentDate" class="date"></h2>
+          </span>
+        </section>
+
+        <section>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <div class="col">
+                  <div class="card" style="width: 10rem; height: 9rem">
+                    <h1 class="temperature">Low</h1>
+                    <h1 class="status-weather-cel" id="lowTemp"></h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card bg-card" style="width: 10rem; height: 9rem; padding-bottom: 10rem;">
+                  <h1 id="iconWeather"></h1>
+                  <h2 class="status-weather" id="temperature-description"></h2>
+                  <h1 class="status-weather-cel" id="temperature"></h1>
+                  <div id="outer">
+                    <button class="celcius-button" id="celsBtn">°C</button>
+                    <button class="fahrenheit-button" id="fahBtn">°F</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="col">
+                  <div class="card" style="width: 10rem; height: 9rem">
+                    <h1 class="temperature">High</h1>
+                    <h1 class="status-weather-cel" id="highTemp"></h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="weather-search">
+          <form id="search_form">
+            <div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+              <div class="searchbar">
+                <input
+                  class="search_input"
+                  type="text"
+                  placeholder="Search your city here!!"
+                  id="city-input"
+                  autocomplete="off"
+                  autofocus="on"
+                />
+                <button class="fas fa-search search_icon"></button>
+              </div>
+            </div>
+          </div>
+          </form>
+        </section>
+
+        <section class="day-weather-section">
+          <div class="container text-center day-weather">
+            <div class="row day-weather-row">
+              <div class="col day-weather-col">
+                <h4>TUE</h4>
+                <h1><i class="wi wi-day-cloudy weather-ico"></i></h1>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col tempc">12&#8451;</div>
+                    <div class="col tempc">14&#8451;</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col day-weather-col">
+                <h4>WED</h4>
+                <h1><i class="wi wi-day-hail weather-ico"></i></h1>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col tempc">14&#8451;</div>
+                    <div class="col tempc">15&#8451;</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col day-weather-col">
+                <h4>TRU</h4>
+                <h1><i class="wi wi-day-sleet-storm weather-ico"></i></h1>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col tempc">10&#8451;</div>
+                    <div class="col tempc">15&#8451;</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col day-weather-col">
+                <h4>FRI</h4>
+                <h1><i class="wi wi-day-light-wind weather-ico"></i></h1>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col tempc">7&#8451;</div>
+                    <div class="col tempc">10&#8451;</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col day-weather-col">
+                <h4>SAT</h4>
+                <h1><i class="wi wi-day-cloudy-gusts weather-ico"></i></h1>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col tempc">10℃</div>
+                    <div class="col tempc">19℃</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="weatherCh weatherCh-body">
+          <div class="container text-center">
+            <div class="row tempd">
+              <div class="col">
+                <p>Humidity</p>
+                <p id="humidity"><strong></strong></p>
+              </div>
+              <div class="col">
+                <p>WindSpeed</p>
+                <p id="wind"><strong></strong></p>
+              </div>
+              <div class="col">
+                <p>Visibility</p>
+                <p id="visibility"><strong></strong></p>
+              </div>
+              <div class="col">
+                <p>Pressure</p>
+                <p id="pressure"><strong></strong></p>
+              </div>
+            </div>
+        </section>
+
+
+        <section class="weatherCh">
+          <div class="social-media icons">
+              <a 
+                href="https://github.com/diannita"
+                target="_blank" class="icon">
+                <i class="fab fa-github"></i>
+              </a>
+              <!-- linkedin -->
+              <a
+                href="https://www.linkedin.com/in/dianarodriguezcosme/"
+                class="icon"
+                target="_blank">
+                <i class="fab fa-linkedin-in fa-lg"></i>
+              </a>
+              <!-- instagram -->
+              <a
+                href="https://www.instagram.com/diannitaro/"
+                class="icon"
+                target="_blank">
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+            </div>
+        </section>
+      </div>
+    </div>
+    
+    <section>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <p class="footer">
+              (o˘◡˘o) This page was built by Diana Rodriguez Cosme 🇨🇴
+            </p>
+            <p class="footer">Open-source code</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <!-- internal resourses -->
+  <script type="text/javascript" src="./src/js/javascript.js"></script>
+  <!-- search btn -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</html>

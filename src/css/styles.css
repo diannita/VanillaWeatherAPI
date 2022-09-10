@@ -1,0 +1,206 @@
+/* Start body for weather css */
+body {
+  background-color: #7f5a83;
+  background-image: linear-gradient(45deg, #7f5a83 30%, #0d324d 94%);
+  background-attachment: fixed;
+}
+.btnLocation {
+  background: none;
+  color: #ffff;
+  border-color: #ffff;
+  border-radius: 50%;
+}
+.card {
+  background-color: transparent !important;
+  border: none !important;
+}
+.date {
+  text-align: center;
+  font-size: 24px;
+  line-height: 0.2em;
+  padding-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: #fcb9a4;
+  text-shadow: 2px 2px #8b4a6c;
+}
+.day-weather-section {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.day-weather {
+  padding-top: 2rem;
+}
+.day-weather-col {
+  padding: 20px 20px;
+}
+.day-weather-row {
+  border: #fcb9a4 solid 2px;
+  border-radius: 15px;
+}
+.div-bg-city {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  border: none;
+  width: 650px;
+  height: 950px;
+  background: url("../img/cinade-city.gif");
+  display: block;
+  margin: 5% auto;
+}
+.footer {
+  text-align: center;
+  color: black;
+}
+.social-media {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light-box-bg-c);
+  border-radius: 50%;
+  box-shadow: 8px 4px 18px -2px rgb(31, 31, 49);
+}
+h4 {
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 2px 2px 1px #fcb9a4;
+  color: #fff;
+}
+.lb-city {
+  text-align: center;
+  color: #ffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  padding: 15px 15px;
+  padding-top: 30px;
+  text-shadow: 2px 2px #8b4a6c;
+}
+.status-weather {
+  color: #ffff;
+  text-shadow: 2px 2px #8b4a6c;
+}
+.status-weather-cel {
+  color: #8b4a6c;
+  text-shadow: 2px 2px #e7ebad;
+}
+.tempc,
+.tempd {
+  font-size: 11px;
+  color: #ffff;
+  text-shadow: 2px 2px #8b4a6c;
+}
+.tempd {
+  font-size: 24px;
+}
+.temperature {
+  padding: 30px 30px 30px 30px;
+  color: #ffff;
+  text-shadow: 2px 2px #8b4a6c;
+}
+.weather {
+  text-align: center;
+  padding: 30px 30px 30px 30px;
+  font-size: 70px;
+  color: #8b4a6c;
+  text-shadow: 2px 3px #ffff;
+}
+.weatherCh {
+  padding-top: 2rem;
+}
+.weather-search {
+  padding-top: 10rem;
+}
+.weatherCh-body {
+  padding-right: 30px;
+}
+.weather-ico {
+  text-align: center;
+  font-size: 40px;
+  color: #fcb9a4;
+  text-shadow: 2px 2px #5c2c41;
+}
+.contact-text {
+  color: var(--font-c);
+  font-size: 20px;
+}
+/* End body for weather css */
+
+/* Start Search button css */
+.searchbar {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #cb6a8c;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: 0.4s linear;
+}
+
+.searchbar:hover > .search_input {
+  padding: 0 10px;
+  width: 450px;
+  transition: 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+  background: white;
+  color: #5c2c41 !important;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  background: #bc90c2;
+  text-decoration: none;
+}
+/* End Search button css */
+
+/* Start temperature_toggle */
+.celcius-button,
+.fahrenheit-button {
+  background-color: #fcb9a4;
+  color: #fff;
+  width: 35px;
+  border-radius: 0.375rem;
+  border: none;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+.celcius-button:hover,
+.fahrenheit-button:hover {
+  background-color: #8b4a6c;
+}
+#outer {
+  width: 100%;
+  text-align: center;
+}
+/* End temperature_toggle */
+
+/* media queries */
