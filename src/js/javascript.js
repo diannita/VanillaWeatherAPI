@@ -1,7 +1,15 @@
 // Show Current time
 function currentDateTime(date) {
   let hours = currentTime.getHours();
+  // Adding numerber zero to hours when is lower than ten
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let minutes = currentTime.getMinutes();
+  // Adding numerber zero to minutes when is lower than ten
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   let seconds = currentTime.getSeconds();
 
   let dayIndex = date.getDay();
@@ -24,6 +32,7 @@ dateElement.innerHTML = currentDateTime(currentTime);
 
 //Geolocation - API  Axios
 function showWeatherConditions(response) {
+  console.log(response.data);
   //Show Current City Location
   let headingH1 = document.querySelector("#city");
   headingH1.innerHTML = `${response.data.name}`;
