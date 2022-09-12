@@ -33,6 +33,34 @@ dateElement.innerHTML = currentDateTime(currentTime);
 //Geolocation - API  Axios
 function showWeatherConditions(response) {
   console.log(response.data);
+
+  let iconaux = response.data.weather[0].icon;
+  // alert(iconaux);
+  if (iconaux == "01d") {
+    iconWeather.innerHTML = `<i class="wi wi-day-sunny weather"></i>`;
+  } else if (iconaux == "02d") {
+    iconWeather.innerHTML = `<i class="wi wi-day-sunny-overcast weather"></i>`;
+  } else if (iconaux == "03d") {
+    iconWeather.innerHTML = `<i class="wi wi-cloud weather"></i>`;
+  } else if (iconaux == "04d") {
+    iconWeather.innerHTML = `<i class="wi wi-cloudy weather"></i>`;
+  } else if (iconaux == "09d") {
+    iconWeather.innerHTML = `<i class="wi wi-rain-mix weather"></i>`;
+  } else if (iconaux == "10d") {
+    iconWeather.innerHTML = `<i class="wi wi-day-sleet weather"></i>`;
+  } else if (iconaux == "11d") {
+    iconWeather.innerHTML = `<i class="wi wi-day-lightning weather"></i>`;
+  } else if (iconaux == "11d") {
+    iconWeather.innerHTML = `<i class="wi wi-day-lightning weather"></i>`;
+  } else if (iconaux == "13d") {
+    iconWeather.innerHTML = `<i class="wi wi-snowflake-cold weather"></i>`;
+  } else if (iconaux == "50d") {
+    iconWeather.innerHTML = `<i class="wi wi-night-cloudy-windy weather"></i>`;
+  } else {
+    iconWeather.innerHTML = `<i class="wi wi-day-fog weather"></i>`;
+  }
+
+  console.log(response.data);
   //Show Current City Location
   let headingH1 = document.querySelector("#city");
   headingH1.innerHTML = `${response.data.name}`;
@@ -49,7 +77,7 @@ function showWeatherConditions(response) {
 
   //Show Weather Description
   let description = document.querySelector("#temperature-description");
-  description.innerHTML = response.data.weather[0].main;
+  description.innerHTML = response.data.weather[0].description;
 
   //Show Temperature
   let temperature = Math.round(response.data.main.temp);
@@ -75,6 +103,24 @@ function showWeatherConditions(response) {
   let pressure = Math.round(response.data.main.pressure);
   let pressureElement = document.querySelector("#pressure");
   pressureElement.innerHTML = `${pressure}`;
+
+  //Weather icons
+  // let iconWeather = document.querySelector("#iconWeather");
+  // iconWeather.innerHTML = `<i class="wi wi-day-light-wind weather"></i>`;
+  // if (data.weather[0].icon == "01n") {
+  //   alert("something" + data.weather[0].icon);
+  //   iconWeather.innerHTML = `<i class="wi wi-day-cloudy"></i>`;
+  // } else if (data.weather[0].icon == "02n") {
+  //   iconWeather.innerHTML = `<i class="wi wi-cloudy"></i>`;
+  // } else if (data.weather[0].icon == "03n") {
+  //   iconWeather.innerHTML = `<i class="wi wi-cloud"></i>`;
+  // } else if (data.weather[0].icon == "04n") {
+  //   iconWeather.innerHTML = `<i class="wi wi-day-sunny"></i>`;
+  // } else if (data.weather[0].icon == "50n") {
+  //   iconWeather.innerHTML = `<i class="wi wi-cloudy-windy"></i>`;
+  // } else {
+  //   iconWeather.innerHTML = `<i class="wi wi-day-rain-wind"></i>`;
+  // }
 }
 
 //Function that shows current coordinates
@@ -85,6 +131,7 @@ function PositionGeo(position) {
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeatherConditions);
 }
+
 //Get current location by pressing a button
 function getCurrentLocation(event) {
   event.preventDefault();
@@ -108,7 +155,7 @@ function submitBtn(event) {
 
 let searchForm = document.querySelector("#search_form");
 searchForm.addEventListener("submit", submitBtn);
-searchCity("Italy");
+searchCity("New York");
 
 //Change type of temperature
 //search button div - submit
@@ -125,12 +172,6 @@ showTempFahrenheit.addEventListener("click", function (tempFahr) {
 });
 
 //Weather icons
-let iconWeather = document.querySelector("#iconWeather");
-iconWeather.innerHTML = `<i class="wi wi-day-fog weather"></i>`;
-
-// function weatherIcon() {
-//   let iconTemperature = document.querySelector("#temperature-description");
-//   if (iconTemperature === "Rain"){
-
-//   }
-// }
+// let iconWeather = document.querySelector("#iconWeather");
+// let iconWeather = document.querySelector("#iconWeather");
+// iconWeather.innerHTML = `<i class="wi wi-day-fog weather"></i>`;
