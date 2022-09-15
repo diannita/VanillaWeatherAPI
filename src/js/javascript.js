@@ -111,6 +111,9 @@ function showWeatherConditions(response) {
   let pressure = Math.round(response.data.main.pressure);
   let pressureElement = document.querySelector("#pressure");
   pressureElement.innerHTML = `${pressure}`;
+
+  //Change Temperature
+  celsiusTemperature = response.data.main.temp;
 }
 
 //Function that shows current coordinates
@@ -143,20 +146,32 @@ function submitBtn(event) {
   searchCity(city);
 }
 
+//Function change type of temperature to Fahrenhei
+function displayFahrenheiTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheiTemperature) + " °F";
+}
+
+//Function change type of temperature to Celsius
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature) + " °C";
+}
+
+//Global Variables
+//variables to search for city
 let searchForm = document.querySelector("#search_form");
 searchForm.addEventListener("submit", submitBtn);
 searchCity("Colombia");
 
-//Change type of temperature
-//search button div - submit
-let showTempCelsius = document.querySelector("#celsBtn");
-showTempCelsius.addEventListener("click", function (tempCels) {
-  let celsius = document.querySelector("#temperature");
-  celsius.innerHTML = `10°C`;
-});
-
+//variable to change type of temperature
 let showTempFahrenheit = document.querySelector("#fahBtn");
-showTempFahrenheit.addEventListener("click", function (tempFahr) {
-  let celsius = document.querySelector("#temperature");
-  celsius.innerHTML = `50°F`;
-});
+showTempFahrenheit.addEventListener("click", displayFahrenheiTemperature);
+
+let celsiusTemperature = null;
+
+let showTempCelsius = document.querySelector("#celsBtn");
+showTempCelsius.addEventListener("click", displayCelsiusTemperature);
