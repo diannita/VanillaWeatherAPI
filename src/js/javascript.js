@@ -34,25 +34,36 @@ dateElement.innerHTML = currentDateTime(currentTime);
 function showWeatherConditions(response) {
   console.log(response.data);
 
+  //Weather condtions icons
   let iconaux = response.data.weather[0].icon;
-  // alert(iconaux);
-  if (iconaux == "01d" || iconaux == "01n") {
+
+  if (iconaux == "01d") {
     iconWeather.innerHTML = `<i class="wi wi-day-sunny weather"></i>`;
-  } else if (iconaux == "02d" || iconaux == "02d") {
+  } else if (iconaux == "01n") {
+    iconWeather.innerHTML = `<i class="wi wi-night-clear weather"></i>`;
+  } else if (iconaux == "02d") {
     iconWeather.innerHTML = `<i class="wi wi-day-sunny-overcast weather"></i>`;
+  } else if (iconaux == "02n") {
+    iconWeather.innerHTML = `<i class="wi wi-night-alt-cloudy weather"></i>`;
   } else if (iconaux == "03d" || iconaux == "03n") {
     iconWeather.innerHTML = `<i class="wi wi-cloud weather"></i>`;
   } else if (iconaux == "04d" || iconaux == "04n") {
     iconWeather.innerHTML = `<i class="wi wi-cloudy weather"></i>`;
   } else if (iconaux == "09d" || iconaux == "09n") {
     iconWeather.innerHTML = `<i class="wi wi-rain-mix weather"></i>`;
-  } else if (iconaux == "10d" || iconaux == "10n") {
+  } else if (iconaux == "10d") {
     iconWeather.innerHTML = `<i class="wi wi-day-sleet weather"></i>`;
-  } else if (iconaux == "11d" || iconaux == "11n") {
+  } else if (iconaux == "10n") {
+    iconWeather.innerHTML = `<i class="wi wi-night-sleet weather"></i>`;
+  } else if (iconaux == "11d") {
     iconWeather.innerHTML = `<i class="wi wi-day-lightning weather"></i>`;
+  } else if (iconaux == "11n") {
+    iconWeather.innerHTML = `<i class="wi wi-night-alt-lightning weather"></i>`;
   } else if (iconaux == "13d" || iconaux == "13n") {
     iconWeather.innerHTML = `<i class="wi wi-snowflake-cold weather"></i>`;
-  } else if (iconaux == "50d" || iconaux == "50n") {
+  } else if (iconaux == "50d") {
+    iconWeather.innerHTML = `<i class="wi wi-day-windy weather"></i>`;
+  } else if (iconaux == "50n") {
     iconWeather.innerHTML = `<i class="wi wi-night-cloudy-windy weather"></i>`;
   } else {
     iconWeather.innerHTML = `<i class="wi wi-rain-mix weather"></i>`;
