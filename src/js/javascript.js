@@ -111,24 +111,6 @@ function showWeatherConditions(response) {
   let pressure = Math.round(response.data.main.pressure);
   let pressureElement = document.querySelector("#pressure");
   pressureElement.innerHTML = `${pressure}`;
-
-  //Weather icons
-  // let iconWeather = document.querySelector("#iconWeather");
-  // iconWeather.innerHTML = `<i class="wi wi-day-light-wind weather"></i>`;
-  // if (data.weather[0].icon == "01n") {
-  //   alert("something" + data.weather[0].icon);
-  //   iconWeather.innerHTML = `<i class="wi wi-day-cloudy"></i>`;
-  // } else if (data.weather[0].icon == "02n") {
-  //   iconWeather.innerHTML = `<i class="wi wi-cloudy"></i>`;
-  // } else if (data.weather[0].icon == "03n") {
-  //   iconWeather.innerHTML = `<i class="wi wi-cloud"></i>`;
-  // } else if (data.weather[0].icon == "04n") {
-  //   iconWeather.innerHTML = `<i class="wi wi-day-sunny"></i>`;
-  // } else if (data.weather[0].icon == "50n") {
-  //   iconWeather.innerHTML = `<i class="wi wi-cloudy-windy"></i>`;
-  // } else {
-  //   iconWeather.innerHTML = `<i class="wi wi-day-rain-wind"></i>`;
-  // }
 }
 
 //Function that shows current coordinates
@@ -163,7 +145,7 @@ function submitBtn(event) {
 
 let searchForm = document.querySelector("#search_form");
 searchForm.addEventListener("submit", submitBtn);
-searchCity("New York");
+searchCity("Colombia");
 
 //Change type of temperature
 //search button div - submit
@@ -178,8 +160,3 @@ showTempFahrenheit.addEventListener("click", function (tempFahr) {
   let celsius = document.querySelector("#temperature");
   celsius.innerHTML = `50°F`;
 });
-
-//Weather icons
-// let iconWeather = document.querySelector("#iconWeather");
-// let iconWeather = document.querySelector("#iconWeather");
-// iconWeather.innerHTML = `<i class="wi wi-day-fog weather"></i>`;
