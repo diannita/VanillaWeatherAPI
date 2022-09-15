@@ -90,7 +90,7 @@ function showWeatherConditions(response) {
   //Show Temperature
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `${temperature}˚C`;
+  temperatureElement.innerHTML = `${temperature} °C`;
 
   //Show Current Humidity
   let humidity = Math.round(response.data.main.humidity);
