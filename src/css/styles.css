@@ -122,12 +122,14 @@ h4 {
 }
 .tempc,
 .tempd {
-  font-size: 20px;
+  font-size: 18px;
   color: #ffff;
   text-shadow: 2px 2px #8b4a6c;
 }
-.tempd {
-  font-size: 24px;
+.tempm {
+  font-size: 18px;
+  color: rgb(238, 200, 200);
+  text-shadow: 2px 2px #8b4a6c;
 }
 .temperature {
   padding: 30px 30px 30px 30px;
@@ -144,9 +146,6 @@ h4 {
 .weatherCh {
   padding-top: 2rem;
 }
-.weather-search {
-  padding-top: 10rem;
-}
 .weatherCh-body {
   padding-right: 30px;
 }
@@ -159,6 +158,9 @@ h4 {
 .contact-text {
   color: var(--font-c);
   font-size: 20px;
+}
+.weather-search {
+  padding-top: 1rem;
 }
 /* End body for weather css */
 
@@ -236,3 +238,13 @@ h4 {
 /* End temperature_toggle */
 
 /* media queries */
+@media (min-width: 768px) {
+  .day-weather-section {
+    padding-top: 10rem;
+  }
+}
+@media (max-width: 575px) {
+  .day-weather-section {
+    padding-top: 10rem;
+  }
+}

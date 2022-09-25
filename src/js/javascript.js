@@ -55,11 +55,11 @@ function displayForecast(response) {
         <img src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png" alt="" width="75">
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max tempc">
+        <div>
+          <span class="tempc">
             ${Math.round(forecastDay.temp.max)}°
           </span>
-          <span class="weather-forecast-temperature-min tempc">
+          <span class="tempm">
             ${Math.round(forecastDay.temp.min)}°
           </span>
         </div>
@@ -115,12 +115,12 @@ function showWeatherConditions(response) {
   //Show Low Temperature
   let lowTemp = response.data.main.temp_min;
   let lowTempElement = document.querySelector("#lowTemp");
-  lowTempElement.innerHTML = `${lowTemp}`;
+  lowTempElement.innerHTML = `${Math.round(lowTemp)}`;
 
   //Show High Temperature
   let highTemp = response.data.main.temp_max;
   let highTempElement = document.querySelector("#highTemp");
-  highTempElement.innerHTML = `${highTemp}`;
+  highTempElement.innerHTML = `${Math.round(highTemp)}`;
 
   //Show Weather Description
   let description = document.querySelector("#temperature-description");
