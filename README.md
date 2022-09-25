@@ -7,14 +7,14 @@
   - Token Creation
   - Current weather
   - Daily forescast
-  
+ --- 
 ###Technologies:
 - Vanilla JS
 - HTML5 
 - CSS3
 - Bootstrap
 - weather-icons.css from @erikflowers
-
+---
 ###Host deployment
 - NetlifyCancel changes
 - Github
