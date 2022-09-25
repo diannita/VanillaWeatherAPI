@@ -16,5 +16,5 @@
 - weather-icons.css from @erikflowers
 ---
 ### Host deployment
-- NetlifyCancel changes
+- Netlify
 - Github
