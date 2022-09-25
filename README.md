@@ -1,7 +1,7 @@
 # VanillaWeatherAPI
  Creation of weather API with SheCodes Plus Workshop.
  
- ##Openweathermap.org.   
+ ###Openweathermap.org.   
   - Used On call API 3.0 
    - daily data forescast
   - Token Creation
@@ -15,6 +15,6 @@
 - Bootstrap
 - weather-icons.css from @erikflowers
 
-##Host deployment
-- Netlify
+###Host deployment
+- NetlifyCancel changes
 - Github
