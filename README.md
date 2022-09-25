@@ -1,7 +1,7 @@
 # VanillaWeatherAPI
  Creation of weather API with SheCodes Plus Workshop.
  
- ##https://openweathermap.org/.   
+ ##Openweathermap.org.   
   - Used On call API 3.0 
    - daily data forescast
   - Token Creation
