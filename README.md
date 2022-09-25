@@ -1,2 +1,20 @@
 # VanillaWeatherAPI
- Creation of weather API with web technologies Vanilla JS, HTML5, CSS3, Bootstrap
+ Creation of weather API with SheCodes Plus Workshop.
+ 
+ ##https://openweathermap.org/.   
+  - Used On call API 3.0 
+   - daily data forescast
+  - Token Creation
+  - Current weather
+  - Daily forescast
+  
+###Technologies:
+- Vanilla JS
+- HTML5 
+- CSS3
+- Bootstrap
+- weather-icons.css from @erikflowers
+
+##Host deployment
+- Netlify
+- Github
